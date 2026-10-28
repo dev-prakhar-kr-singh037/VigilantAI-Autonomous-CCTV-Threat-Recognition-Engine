@@ -1,4 +1,4 @@
-# 🚨 Smart City CCTV Violence & Weapon Detection System
+# 🚨 VigilantAI: Autonomous CCTV Threat Recognition Engine
 
 An AI-powered automated video surveillance system designed to detect **Normal**, **Violence**, and **Weaponized** activity in CCTV video feeds using deep learning and real-time temporal smoothing.
 
@@ -54,8 +54,7 @@ To eliminate false-alarm flickering caused by camera shake, fast motion, or ligh
 ## 📂 Dataset Structure
 
 The model is trained on the **Smart City Violence Detection (SCVD)** dataset. Videos are sub-sampled at a stride of **25 frames** (~1 frame per second at 25 FPS) to reduce background redundancy and avoid data leakage across train/test splits.
-
-    ```text
+ ```text
     SCVD_Project/
     └── SCVD-extracted/
         ├── train/
@@ -65,13 +64,15 @@ The model is trained on the **Smart City Violence Detection (SCVD)** dataset. Vi
         └── test/
             ├── Normal/        (*.jpg)
             ├── Violence/      (*.jpg)
-            └── Weaponized/    (*.jpg)
+            └── Weaponized/    (*.jpg)```
+```
 
 📊 Model Training & Performance
 The pipeline utilizes Ultralytics YOLOv8 Medium Classification (yolov8m-cls.pt) trained on an NVIDIA T4 GPU in Google Colab.Hyperparameters:Base Weights: yolov8m-cls.pt Image Resolution (imgsz): $416 \times 416$ Epochs: 35 Batch Size: 16 Optimizer: Auto (SGD / AdamW with LR Warmup)Evaluated Metrics (Saved in SCVD-test):Overall Accuracy: Computed across extracted test frames.Macro Precision, Recall & F1-Score: Accounted equally across Normal, Violence, and Weaponized classes.Confusion Matrix: Automatically rendered and saved to Google Drive.⚡ Installation & SetupPrerequisitesPython 3.10 or higherGit1. Clone the RepositoryBashgit clone [https://github.com/your-username/smart-city-violence-detection.git](https://github.com/your-username/smart-city-violence-detection.git)
   
-    ```bash
+```bash
     cd smart-city-violence-detection
+```
 
 2. Create and Activate Virtual Environment
   Bash
@@ -84,22 +85,23 @@ The pipeline utilizes Ultralytics YOLOv8 Medium Classification (yolov8m-cls.pt) 
   source venv/bin/activate
   
 3. Install Dependencies
-    ```Bash
+```Bash
     pip install -r requirements.txt
+```
 
 🚀 Running the Streamlit Web Application
 Place your trained model file (best.pt) in the project root folder.
 
 Launch the Streamlit server:
-    ```Bash
+```Bash
     streamlit run app.py
-    
+```
 Open your browser and navigate to http://localhost:8501.
 
 Upload any .mp4, .avi, or .mov CCTV clip to monitor live alerts and sequence analytics.
 
 📋 Requirements (requirements.txt)
-    ```Plaintext
+ ```Plaintext
       streamlit>=1.28.0
       ultralytics>=8.0.0
       opencv-python-headless>=4.8.0
@@ -107,4 +109,5 @@ Upload any .mp4, .avi, or .mov CCTV clip to monitor live alerts and sequence ana
       pandas>=2.0.0
       plotly>=5.15.0
       scikit-learn>=1.2.0
+```
         
