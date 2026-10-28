@@ -54,6 +54,9 @@ To eliminate false-alarm flickering caused by camera shake, fast motion, or ligh
 ## 📂 Dataset Structure
 
 The model is trained on the **Smart City Violence Detection (SCVD)** dataset. Videos are sub-sampled at a stride of **25 frames** (~1 frame per second at 25 FPS) to reduce background redundancy and avoid data leakage across train/test splits.
+- **Dataset Source:** [Smart City Violence Detection (SCVD) Dataset on Kaggle][https://www.kaggle.com/datasets/toluwaniaremu/smartcity-cctv-violence-detection-dataset-scvd]
+- **Data Preprocessing:** Videos were sub-sampled at a stride of **25 frames** (~1 frame per second at 25 FPS) to eliminate frame-to-frame background redundancy and prevent data leakage across train/test splits.
+ 
  ```text
     SCVD_Project/
     └── SCVD-extracted/
@@ -77,13 +80,16 @@ The pipeline utilizes Ultralytics YOLOv8 Medium Classification (yolov8m-cls.pt) 
 2. Create and Activate Virtual Environment
   Bash
   # Windows
+  
+  ```bash
   python -m venv venv
   venv\Scripts\activate
-
+```
   # Linux / macOS
+  ```bash
   python3 -m venv venv
   source venv/bin/activate
-  
+  ```
 3. Install Dependencies
 ```Bash
     pip install -r requirements.txt
