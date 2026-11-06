@@ -71,7 +71,7 @@ The model is trained on the **Smart City Violence Detection (SCVD)** dataset. Vi
 ```
 
 📊 Model Training & Performance
-The pipeline utilizes Ultralytics YOLOv8 Medium Classification (yolov8m-cls.pt) trained on an NVIDIA T4 GPU in Google Colab.Hyperparameters:Base Weights: yolov8m-cls.pt Image Resolution (imgsz): $416 \times 416$ Epochs: 35 Batch Size: 16 Optimizer: Auto (SGD / AdamW with LR Warmup)Evaluated Metrics (Saved in SCVD-test):Overall Accuracy: Computed across extracted test frames.Macro Precision, Recall & F1-Score: Accounted equally across Normal, Violence, and Weaponized classes.Confusion Matrix: Automatically rendered and saved to Google Drive.⚡ Installation & SetupPrerequisitesPython 3.10 or higherGit1. Clone the RepositoryBashgit clone [https://github.com/your-username/smart-city-violence-detection.git](https://github.com/your-username/smart-city-violence-detection.git)
+The pipeline utilizes Ultralytics YOLOv8 Medium Classification (yolov8m-cls.pt) trained on an NVIDIA T4 GPU in Google Colab.Hyperparameters:Base Weights: yolov8m-cls.pt Image Resolution (imgsz): $416 \times 416$ Epochs: 35 Batch Size: 16 Optimizer: Auto (SGD / AdamW with LR Warmup)Evaluated Metrics (Saved in SCVD-test):Overall Accuracy: Computed across extracted test frames.Macro Precision, Recall & F1-Score: Accounted equally across Normal, Violence, and Weaponized classes.Confusion Matrix: Automatically rendered and saved to Google Drive.⚡ Installation & SetupPrerequisitesPython 3.10 or higherGit1.
   
 ```bash
     cd smart-city-violence-detection
